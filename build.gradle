@@ -24,17 +24,26 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
-
+	implementation 'jakarta.validation:jakarta.validation-api:2.0.1' // @Pattern
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	implementation 'mysql:mysql-connector-java:8.0.32' // MySQL JDBC 드라이버 추가
 
 	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
 	// mysql 연결 드라이버
-	implementation 'mysql:mysql-connector-java:5.1.6'
+	//implementation 'mysql:mysql-connector-java:5.1.6'
 
 	// 테스트용 db
 	runtimeOnly 'com.h2database:h2'
